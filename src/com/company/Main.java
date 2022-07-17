@@ -4,21 +4,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Apartment apartment = new Apartment(4,5,"Квартира",5);
-//        Castle castle = new Castle(25,50,"Букенгемский","Средневековый");
-//        Barn barn = new Barn(10,20,"Сарай",100000);
+    createObject("Apartment").print();
+        System.out.println("____________________________________");
+    createObject("Barn").print();
+        System.out.println("_____________________________________");
+    createObject("Castle").print();
+
 
 
     }
-    String ClassName = Apartment;
 
-    public Houses createObject(String ClassName){
-        switch (ClassName){
-            case Apartment:
-                Apartment apartment = new Apartment();
-
+    public static Houses createObject(String ClassName) {
+        switch (ClassName) {
+            case "Apartment":
+                return new Apartment(3,3,"Квартира:",5);
+            case "Barn":
+                return new Barn(10,8,"Склад:",10000);
+            case "Castle":
+                return new Castle(20,15,"Замок","Среднее вековый");
+            default:
+                return null;
         }
-        return apartment
 
-    };
+    }
 }
